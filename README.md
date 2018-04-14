@@ -8,9 +8,9 @@ Validating!!! coming soon!
 
 ## Environment
 
-・Docker for Mac 18.04.0-ce-mac62 (23965)/edge
-・ansible -v2.5.0
-・ubuntu-vuls(vuls docker)
+・Docker for Mac 18.04.0-ce-mac62 (23965)/edge  
+・ansible -v2.5.0  
+・ubuntu-vuls(vuls docker)  
 
 ## 1.setting Docker for Mac Daemon
 
