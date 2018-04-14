@@ -1,6 +1,6 @@
 # ansible_vuls
 
-![new-9781788394512_copy](https://user-images.githubusercontent.com/5633085/38768975-62c9b3ce-4036-11e8-9584-1210228b4207.png)
+![2018-04-14 22 52 32](https://user-images.githubusercontent.com/5633085/38768987-911d2756-4036-11e8-8765-c3ae0afde3e1.jpg)
 
 https://github.com/RVIRUS0817/security-automation-with-ansible-2  
 
