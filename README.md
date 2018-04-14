@@ -15,7 +15,7 @@ Validating!!! coming soon!
 ・ansible -v2.5.0  
 ・ubuntu-vuls(vuls docker)  
 
-# vuls-server_build
+# vuls-server_build/  
 
 ## 1.setting Docker for Mac Daemon
 
