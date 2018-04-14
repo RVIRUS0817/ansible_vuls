@@ -1,1 +1,83 @@
-coming soon
+- name: scanning and reporting using vuls
+  hosts: vuls
+  become: yes
+  vars:
+    vuls_data_directory: "/vuls_data"
+    slack_legacytoken: "xoxpxxxxxxxxxx"
+    slack_channel: "#xxxxxxxx"
+    slack_emoji: ":vuls-report"
+    slack_user: "vuls-report"
+    server_to_scan: ubuntu-vuls
+    server_username: root
+    server_key_file_name: ubuntu-vuls
+
+  tasks:
+    - name: copying configuraiton file and ssh keys
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dst }}"
+        mode: 0400
+
+      with_items:
+         - { src: 'config.toml', dst: '/root/config.toml' }
+         - { src: 'ubuntu-vuls', dst: '/root/.ssh/ubuntu-vuls' }
+
+    - name: running config test
+      docker_container:
+        name: configtest
+        image: vuls/vuls
+        auto_remove: yes
+        interactive: yes
+        state: started
+        timeout: 600
+        command: configtest -config=/root/config.toml
+        volumes:
+          - "/root/.ssh:/root/.ssh:ro"
+          - "{{ vuls_data_directory }}:/vuls"
+          - "{{ vuls_data_directory }}/vuls-log:/var/log/vuls"
+          - "/root/config.toml:/root/config.toml:ro"
+
+    - name: running vuls scanner
+      docker_container:
+        name: vulsscan
+        image: vuls/vuls
+        auto_remove: yes
+        interactive: yes
+        state: started
+        timeout: 600
+        command: scan -config=/root/config.toml
+        volumes:
+          - "/root/.ssh:/root/.ssh:ro"
+          - "{{ vuls_data_directory }}:/vuls"
+          - "{{ vuls_data_directory }}/vuls-log:/var/log/vuls"
+          - "/root/config.toml:/root/config.toml:ro"
+          - "/etc/localtime:/etc/localtime:ro"
+        env:
+          TZ: "Asia/Kolkata"
+
+    - name: sending slack report
+      docker_container:
+        name: vulsreport
+        image: vuls/vuls
+        auto_remove: yes
+        interactive: yes
+        state: started
+        timeout: 600
+        command: report -cvedb-path=/vuls/cve.sqlite3 -ovaldb-path=/vuls/oval.sqlite3 --to-slack -config=/root/config.toml
+        volumes:
+          - "/root/.ssh:/root/.ssh:ro"
+          - "{{ vuls_data_directory }}:/vuls"
+          - "{{ vuls_data_directory }}/vuls-log:/var/log/vuls"
+          - "/root/config.toml:/root/config.toml:ro"
+          - "/etc/localtime:/etc/localtime:ro"
+
+    - name: vuls webui report
+      docker_container:
+        name: vulswebui
+        image: vuls/vulsrepo
+        interactive: yes
+        volumes:
+          - "{{ vuls_data_directory }}:/vuls"
+        ports:
+          - "80:5111"
+

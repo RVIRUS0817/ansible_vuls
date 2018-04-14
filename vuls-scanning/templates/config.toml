@@ -1,5 +1,5 @@
 [slack]
-legacyToken = "{{ slack_web_legacytoken}}"
+legacyToken = "{{ slack_legacytoken}}"
 channel = "{{ slack_channel }}"
 iconEmoji = "{{ slack_emoji }}"
 authUser = "{{ slack_user }}"
