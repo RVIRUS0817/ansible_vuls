@@ -1,7 +1,8 @@
 [slack]
-hookURL = "{{ slack_web_hook_url}}"
+legacyToken = "{{ slack_web_legacytoken}}"
 channel = "{{ slack_channel }}"
 iconEmoji = "{{ slack_emoji }}"
+authUser = "{{ slack_user }}"
 
 [servers]
 
