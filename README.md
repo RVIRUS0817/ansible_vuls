@@ -17,7 +17,7 @@ $ docker pull tvirus17/ansible-vuls_ubuntu16
 ## 2.docker run
 
 ```
-$ docker run -p 22:22 -h "ubuntu" -e TZ=Asia/Tokyo --privileged -d --name ubuntu tvirus17/ansible-vuls_ubuntu16 /sbin/init
+$ docker run -p 22:22 -h "ubuntu-vuls" -e TZ=Asia/Tokyo --privileged -d --name ubuntu-vuls tvirus17/ansible-vuls_ubuntu16 /sbin/init
 ```
 
 ## 3.setting ssh
