@@ -74,6 +74,21 @@ $ ansible-playbook -i inventory main.yml
 ```
 ![2018-04-15 11 26 47](https://user-images.githubusercontent.com/5633085/38774273-efca4216-409f-11e8-997b-c446f0ee45e6.jpg)
 
+```
+root@ubuntu-vuls:~# docker ps
+CONTAINER ID        IMAGE                   COMMAND                  CREATED              STATUS              PORTS               NAMES
+33e33b4fd9b3        vuls/goval-dictionary   "goval-dictionary fe…"   51 seconds ago       Up 16 seconds                           ubuntu-oval-16
+fdfd00f04c2c        vuls/goval-dictionary   "goval-dictionary fe…"   About a minute ago   Up 51 seconds                           ubuntu-oval-14
+6d612f4cade0        vuls/goval-dictionary   "goval-dictionary fe…"   2 minutes ago        Up About a minute                       ubuntu-oval-12
+
+root@ubuntu-vuls:~# docker images
+REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
+vuls/goval-dictionary    latest              256d630fc765        5 days ago          953MB
+vuls/vuls                latest              9bc590ea71cf        5 days ago          1.49GB
+vuls/go-cve-dictionary   latest              26be99fe513a        5 days ago          1.04GB
+
+```
+
 -----
 
 # vuls-scanning/  
