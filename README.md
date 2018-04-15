@@ -6,6 +6,10 @@ https://github.com/RVIRUS0817/security-automation-with-ansible-2
 
 It is a repository that automates the construction of Vuls server, scan and report with ansible while looking at security-automation-with-ansible-2!
 
+## Install with Ansible  
+
+https://vuls.io/docs/en/install-with-ansible.html
+
 ## Environment
 
 ・Docker for Mac 18.04.0-ce-mac62 (23965)/edge  
