@@ -38,6 +38,7 @@ $ docker run -p 22:22 -h "ubuntu-vuls" -e TZ=Asia/Tokyo --privileged -d --name u
 ## 4.setting ssh
 
 ```
+$ docker exec -it xxxx /bin/bash
 root@ubuntu-vuls:~# mkdir .ssh
 root@ubuntu-vuls:~# chmod 700 .ssh/
 root@ubuntu-vuls:~# cd .ssh/
