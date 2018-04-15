@@ -12,6 +12,20 @@
       - "{{ vuls_data_directory }}/go-cve-dictionary-log:/var/log/vuls"
   with_sequence: start=2002 end="{{ nvd_database_years }}"
 
+- name: fetching JVN database locally
+  docker_container:
+    name: "cve-{{ item }}"
+    image: vuls/go-cve-dictionary
+    auto_remove: yes
+    interactive: yes
+    state: started
+    timeout: 600
+    command: fetchjvn -years "{{ item }}"
+    volumes:
+      - "{{ vuls_data_directory }}:/vuls"
+      - "{{ vuls_data_directory }}/go-cve-dictionary-log:/var/log/vuls"
+  with_sequence: start=1998 end="{{ nvd_database_years }}"
+
 - name: fetching redhat oval data
   docker_container:
     name: "redhat-oval-{{ item }}"

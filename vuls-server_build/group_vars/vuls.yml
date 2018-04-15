@@ -1,5 +1,5 @@
 vuls_data_directory: "/vuls_data"
-nvd_database_years: 2017
+nvd_database_years: 2018
 redhat_oval_versions:
   - 6
   - 7
