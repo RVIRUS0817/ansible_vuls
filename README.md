@@ -38,11 +38,31 @@ $ docker run -p 22:22 -h "ubuntu-vuls" -e TZ=Asia/Tokyo --privileged -d --name u
 ## 4.setting ssh
 
 ```
-root@ubuntu:~# mkdir .ssh
-root@ubuntu:~# chmod 700 .ssh/
-root@ubuntu:~# cd .ssh/
-root@ubuntu:~/.ssh# vim authorized_keys
-root@ubuntu:~/.ssh# chmod 600 authorized_keys
+root@ubuntu-vuls:~# mkdir .ssh
+root@ubuntu-vuls:~# chmod 700 .ssh/
+root@ubuntu-vuls:~# cd .ssh/
+root@ubuntu-vuls:~/.ssh# vim authorized_keys
+root@ubuntu-vuls:~/.ssh# chmod 600 authorized_keys
+
+$ ssh ubuntu-vuls
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:vSxT14VBokw/dQUI9o0yudU4Jc2DNBF5395tG+JRR3Q.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'localhost' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.9.87-linuxkit-aufs x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu-vuls:~# 
 
 ```
 
