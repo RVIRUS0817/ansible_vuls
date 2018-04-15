@@ -14,7 +14,6 @@ https://vuls.io/docs/en/install-with-ansible.html
 
 ・Docker for Mac 18.04.0-ce-mac62 (23965)/edge  
 ・ansible -v2.5.0  
-・ubuntu-vuls(vuls docker)  
 
 ---
 
