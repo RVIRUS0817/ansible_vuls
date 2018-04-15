@@ -49,7 +49,9 @@ root@ubuntu:~/.ssh# chmod 600 authorized_keys
 ```
 $ ansible-playbook -i inventory main.yml
 ```
-# vuls-scanning 
+![2018-04-15 11 26 47](https://user-images.githubusercontent.com/5633085/38774273-efca4216-409f-11e8-997b-c446f0ee45e6.jpg)
+
+# vuls-scanning/  
 
 coming soon...
 
