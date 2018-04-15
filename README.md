@@ -6,7 +6,7 @@ https://github.com/RVIRUS0817/security-automation-with-ansible-2
 
 It is a repository that automates the construction of Vuls server, scan and report with ansible while looking at security-automation-with-ansible-2!
 
-## Install with Ansible  
+## Install with Ansible(Vuls document)  
 
 https://vuls.io/docs/en/install-with-ansible.html
 
