@@ -73,6 +73,7 @@ root@ubuntu-vuls:~#
 ## 5.ansible run
 
 ```
+$ cd vuls-server_build/  
 $ ansible-playbook -i hosts main.yml
 ```
 ![2018-04-15 11 26 47](https://user-images.githubusercontent.com/5633085/38774273-efca4216-409f-11e8-997b-c446f0ee45e6.jpg)
@@ -80,9 +81,9 @@ $ ansible-playbook -i hosts main.yml
 ```
 root@ubuntu-vuls:~# docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-vuls/goval-dictionary    latest              256d630fc765        5 days ago          953MB
-vuls/vuls                latest              9bc590ea71cf        5 days ago          1.49GB
-vuls/go-cve-dictionary   latest              26be99fe513a        5 days ago          1.04GB
+vuls/goval-dictionary    latest              256d630fc765        5 days ago          24MB
+vuls/vuls                latest              9bc590ea71cf        5 days ago          23.8MB
+vuls/go-cve-dictionary   latest              26be99fe513a        5 days ago          38.4MB
 
 root@ubuntu-vuls:~# cd /vuls_data/
 root@ubuntu-vuls:/vuls_data# ll
