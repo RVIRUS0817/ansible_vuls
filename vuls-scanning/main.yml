@@ -1,16 +1,6 @@
 - name: scanning and reporting using vuls
-  hosts: vuls
+  hosts: ubuntu-vuls
   become: yes
-  vars:
-    vuls_data_directory: "/vuls_data"
-    slack_legacytoken: "xoxpxxxxxxxxxx"
-    slack_channel: "#xxxxxxxx"
-    slack_emoji: ":vuls-report"
-    slack_user: "vuls-report"
-    server_to_scan: ubuntu-vuls
-    server_username: root
-    server_key_file_name: ubuntu-vuls
-
   tasks:
     - name: copying configuraiton file and ssh keys
       template:
@@ -53,7 +43,7 @@
           - "/root/config.toml:/root/config.toml:ro"
           - "/etc/localtime:/etc/localtime:ro"
         env:
-          TZ: "Asia/Kolkata"
+          TZ: "Asia/Tokyo"
 
     - name: sending slack report
       docker_container:
@@ -80,4 +70,3 @@
           - "{{ vuls_data_directory }}:/vuls"
         ports:
           - "80:5111"
-

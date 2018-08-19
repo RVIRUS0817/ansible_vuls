@@ -1,0 +1,8 @@
+vuls_data_directory: "/vuls_data"
+slack_legacytoken: "xoxp-"
+slack_channel: "#adachin_alert"
+slack_emoji: ":vuls-report"
+slack_user: "vuls-report"
+server_to_scan: localhost
+server_username: root
+server_key_file_name: ubuntu-vuls

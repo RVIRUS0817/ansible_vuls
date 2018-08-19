@@ -4,7 +4,7 @@
 
 https://github.com/RVIRUS0817/security-automation-with-ansible-2  
 
-It is a repository that automates the construction of Vuls server, scan and report with ansible while looking at security-automation-with-ansible-2!
+It is a repository that automates the construction of Vuls server, scan and report with ansible while looking at security-automation-with-ansible-2! and refactoring.  
 
 ## Install with Ansible(Vuls document)  
 
