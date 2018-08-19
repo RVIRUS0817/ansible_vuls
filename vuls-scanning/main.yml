@@ -1,6 +1,5 @@
 - name: scanning and reporting using vuls
   hosts: ubuntu-vuls
-  become: yes
   tasks:
     - name: copying configuraiton file and ssh keys
       template:
